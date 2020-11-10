@@ -10,8 +10,6 @@ class B2bClient3336{
     private  String username;
     private DatagramSocket cltSocket;
     private InetAddress ip;
-    // private DataOutputStream dout;
-    // private DataInputStream din;
     private BufferedReader userInput;
     Thread t1,t2;
     //inner class
@@ -140,7 +138,6 @@ class B2bClient3336{
             e.printStackTrace();
             return;
         }
-      
     }
 
 }
