@@ -27,6 +27,28 @@ class User {
 		// this.start();
 	}
 
+	// public void run() 
+	// {
+	// 	try{
+	// 		chat();
+	// 	}
+	// 	catch(Exception e)
+	// 	{
+	// 		e.printStackTrace();
+	// 		return;
+	// 	}
+	// 	finally{
+	// 		try{
+	// 			this.soc.close();
+	// 			return;
+	// 		}
+	// 		catch(Exception e)
+	// 		{
+	// 			e.printStackTrace();
+	// 		}
+	// 	}
+	// }
+
 	public void onlineStatus() throws IOException
 	{		
 		if(B2bServer3336.mp.containsKey(this.portnumber)==false)
@@ -74,14 +96,15 @@ class User {
 			}
 			if(msg!=null&&B2bServer3336.mp.containsKey(this.portnumber))
 			{
-				System.out.println("inchat "+msg);
+				// System.out.println("inchat "+msg);
 
 				if(B2bServer3336.mp.size()>1)
 				{
 					if(msg.equals("leave"))
 					{
 						// msg= this.username+" left the chat";
-						System.out.println("inleave "+msg);
+						// System.out.println("inleave "+msg);
+						msg=B2bServer3336.mp.get(this.portnumber).username+" left the chat";
 						B2bServer3336.mp.remove(this.portnumber);
 						broadcast(msg);						
 					}
@@ -97,7 +120,7 @@ class User {
 					if(msg.equals("leave"))
 					{
 						B2bServer3336.mp.remove(this.portnumber);
-						this.soc.close();
+						// this.soc.close();
 					}
 					else{
 						// dout.writeUTF("there is no one online");
@@ -112,6 +135,8 @@ class User {
 			if(B2bServer3336.mp.size()==0)
 			{
 				System.out.println("there is no one in chat!!");
+				// this.soc.close();
+				// return;
 				// return;
 			}
 		
